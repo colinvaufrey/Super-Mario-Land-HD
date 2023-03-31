@@ -1,0 +1,211 @@
+[gd_scene load_steps=31 format=3 uid="uid://87mvs53y2p3g"]
+
+[ext_resource type="Script" path="res://source/scenes/mario/mario.gd" id="1_36c7h"]
+[ext_resource type="Texture2D" uid="uid://cywbx4k0qa2d1" path="res://assets/sprites/mario/mario_crouch.png" id="2_tl0xs"]
+[ext_resource type="Texture2D" uid="uid://b8ktqa51h3w2t" path="res://assets/sprites/mario/mario_death.png" id="3_padv7"]
+[ext_resource type="Texture2D" uid="uid://ctnmaswx7hprg" path="res://assets/sprites/mario/mario_fireball.png" id="4_b67sd"]
+[ext_resource type="Texture2D" uid="uid://t4i7xgv483cc" path="res://assets/sprites/mario/mario_idle.png" id="5_rseiv"]
+[ext_resource type="Texture2D" uid="uid://5vcoo5esnd5l" path="res://assets/sprites/mario/mario_idle_super.png" id="6_2hqpj"]
+[ext_resource type="Texture2D" uid="uid://b5symdcbd3d3p" path="res://assets/sprites/mario/mario_jump.png" id="7_hmu4w"]
+[ext_resource type="Texture2D" uid="uid://be2rv1tfk7uy1" path="res://assets/sprites/mario/mario_marine_pop_1.png" id="7_soppa"]
+[ext_resource type="Texture2D" uid="uid://cp58cw7nupj0h" path="res://assets/sprites/mario/mario_marine_pop_2.png" id="8_3qouv"]
+[ext_resource type="Texture2D" uid="uid://bcclwx5tn4x17" path="res://assets/sprites/mario/mario_jump_super.png" id="8_ac1i2"]
+[ext_resource type="Texture2D" uid="uid://c4l3oymopfqum" path="res://assets/sprites/mario/mario_marine_pop_super_1.png" id="9_r1egh"]
+[ext_resource type="Texture2D" uid="uid://ch488ti65mer8" path="res://assets/sprites/mario/mario_marine_pop_super_2.png" id="10_3sb1a"]
+[ext_resource type="Texture2D" uid="uid://ukwuo3bpkr1t" path="res://assets/sprites/mario/mario_run_1.png" id="11_nnvnd"]
+[ext_resource type="Texture2D" uid="uid://y3s35w8ogjhc" path="res://assets/sprites/mario/mario_run_2.png" id="12_o5y4p"]
+[ext_resource type="Texture2D" uid="uid://c1qfmp2psqqgp" path="res://assets/sprites/mario/mario_run_3.png" id="13_vsf5r"]
+[ext_resource type="Texture2D" uid="uid://b0j37tc3hnw0f" path="res://assets/sprites/mario/mario_run_super_1.png" id="14_qb44n"]
+[ext_resource type="Texture2D" uid="uid://m5s0sf8eiiui" path="res://assets/sprites/mario/mario_run_super_2.png" id="15_1xhw2"]
+[ext_resource type="Texture2D" uid="uid://bvow5ntby0je4" path="res://assets/sprites/mario/mario_run_super_3.png" id="16_si3dy"]
+[ext_resource type="Texture2D" uid="uid://o412uiv0xk83" path="res://assets/sprites/mario/mario_sky_pop_1.png" id="17_xxya2"]
+[ext_resource type="Texture2D" uid="uid://owdi2pv7ww4n" path="res://assets/sprites/mario/mario_sky_pop_2.png" id="18_kdbon"]
+[ext_resource type="Texture2D" uid="uid://jlueiybs7db2" path="res://assets/sprites/mario/mario_sky_pop_super_1.png" id="19_oxwxl"]
+[ext_resource type="Texture2D" uid="uid://csc0vptlkudw8" path="res://assets/sprites/mario/mario_sky_pop_super_2.png" id="20_bnm5l"]
+[ext_resource type="Texture2D" uid="uid://cmbfgahgjhao5" path="res://assets/sprites/mario/mario_slide.png" id="21_vjflv"]
+[ext_resource type="Texture2D" uid="uid://6r86oe67g58i" path="res://assets/sprites/mario/mario_slide_super.png" id="22_h6vd5"]
+[ext_resource type="Script" path="res://source/utility/state_machine.gd" id="23_pbppb"]
+[ext_resource type="Script" path="res://source/scenes/mario/states/idle.gd" id="24_mos4l"]
+[ext_resource type="Script" path="res://source/scenes/run.gd" id="25_83cnd"]
+[ext_resource type="Script" path="res://source/scenes/mario/air.gd" id="26_4i2dd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8loy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tl0xs")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_padv7")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b67sd")
+}],
+"loop": true,
+"name": &"fireball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rseiv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2hqpj")
+}],
+"loop": true,
+"name": &"idle_super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hmu4w")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ac1i2")
+}],
+"loop": true,
+"name": &"jump_super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_soppa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3qouv")
+}],
+"loop": true,
+"name": &"marine_pop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_r1egh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3sb1a")
+}],
+"loop": true,
+"name": &"marine_pop_super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_nnvnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o5y4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vsf5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o5y4p")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qb44n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1xhw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_si3dy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1xhw2")
+}],
+"loop": true,
+"name": &"run_super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_xxya2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kdbon")
+}],
+"loop": true,
+"name": &"sky_pop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_oxwxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bnm5l")
+}],
+"loop": true,
+"name": &"sky_pop_super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_vjflv")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_h6vd5")
+}],
+"loop": true,
+"name": &"slide_super",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0tsd"]
+size = Vector2(10, 12)
+
+[node name="Mario" type="CharacterBody2D"]
+script = ExtResource("1_36c7h")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_m8loy")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_h0tsd")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("23_pbppb")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("24_mos4l")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("25_83cnd")
+
+[node name="Air" type="Node" parent="StateMachine"]
+script = ExtResource("26_4i2dd")
