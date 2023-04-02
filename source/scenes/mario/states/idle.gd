@@ -3,7 +3,10 @@ extends MarioState
 
 func enter(_msg := {}) -> void:
 	mario.velocity = Vector2.ZERO
-	mario.sprite.play("idle")
+	if mario.is_super:
+		mario.sprite.play("idle_super")
+	else:
+		mario.sprite.play("idle")
 
 
 func update(_delta: float) -> void:

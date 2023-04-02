@@ -2,7 +2,10 @@
 extends MarioState
 
 func enter(_msg := {}) -> void:
-	mario.sprite.play("run")
+	if mario.is_super:
+		mario.sprite.play("run_super")
+	else:
+		mario.sprite.play("run")
 
 
 func physics_update(_delta: float) -> void:

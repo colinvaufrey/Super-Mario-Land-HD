@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu2sn1uo1vt1u"
+path="res://.godot/imported/09 ENDING (Ending ~ Staff Roll).mp3-c46c60b51aa5f98d1c1e09702e6d4635.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/arrange/09 ENDING (Ending ~ Staff Roll).mp3"
+dest_files=["res://.godot/imported/09 ENDING (Ending ~ Staff Roll).mp3-c46c60b51aa5f98d1c1e09702e6d4635.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -183,7 +183,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0tsd"]
-size = Vector2(10, 12)
+size = Vector2(9, 6)
 
 [node name="Mario" type="CharacterBody2D"]
 script = ExtResource("1_36c7h")
@@ -191,11 +191,21 @@ script = ExtResource("1_36c7h")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m8loy")
-animation = &"run"
+animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+[node name="TerrainCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_h0tsd")
+
+[node name="Camera" type="Camera2D" parent="."]
+limit_left = 0
+limit_bottom = 0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_bottom_margin = 1.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("23_pbppb")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb8o6ulb1sn1m"
+path="res://.godot/imported/10 SUPER MARIOLAND ORIGINAL BGM MEDLEY.mp3-40c8c17995f9e053c3cc53b6f9b1cb8a.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/arrange/10 SUPER MARIOLAND ORIGINAL BGM MEDLEY.mp3"
+dest_files=["res://.godot/imported/10 SUPER MARIOLAND ORIGINAL BGM MEDLEY.mp3-40c8c17995f9e053c3cc53b6f9b1cb8a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
