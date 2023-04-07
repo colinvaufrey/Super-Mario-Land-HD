@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://87mvs53y2p3g"]
+[gd_scene load_steps=36 format=3 uid="uid://87mvs53y2p3g"]
 
 [ext_resource type="Script" path="res://source/scenes/mario/mario.gd" id="1_36c7h"]
 [ext_resource type="Texture2D" uid="uid://cywbx4k0qa2d1" path="res://assets/sprites/mario/mario_crouch.png" id="2_tl0xs"]
@@ -28,6 +28,11 @@
 [ext_resource type="Script" path="res://source/scenes/mario/states/idle.gd" id="24_mos4l"]
 [ext_resource type="Script" path="res://source/scenes/run.gd" id="25_83cnd"]
 [ext_resource type="Script" path="res://source/scenes/mario/air.gd" id="26_4i2dd"]
+[ext_resource type="Script" path="res://source/scenes/mario/SFXPlayer.gd" id="29_o141p"]
+[ext_resource type="AudioStream" uid="uid://cnpxuvfnf83v6" path="res://assets/sound/sfx/jump.wav" id="30_o5slm"]
+[ext_resource type="AudioStream" uid="uid://b2t82m0d18o1v" path="res://assets/sound/sfx/power_up.wav" id="31_mahkr"]
+[ext_resource type="AudioStream" uid="uid://dm58w0bxu157f" path="res://assets/sound/sfx/power_down.wav" id="32_yuy4a"]
+[ext_resource type="AudioStream" uid="uid://dllp25winqast" path="res://assets/sound/sfx/player_fire_ball.wav" id="33_bydd6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m8loy"]
 animations = [{
@@ -186,6 +191,8 @@ animations = [{
 size = Vector2(9, 6)
 
 [node name="Mario" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_36c7h")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -219,3 +226,9 @@ script = ExtResource("25_83cnd")
 
 [node name="Air" type="Node" parent="StateMachine"]
 script = ExtResource("26_4i2dd")
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+script = ExtResource("29_o141p")
+sounds = Array[AudioStream]([ExtResource("30_o5slm"), ExtResource("31_mahkr"), ExtResource("32_yuy4a"), ExtResource("33_bydd6")])
+names = Array[String](["jump", "power_up", "power_down", "fire_ball"])

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://blj7q1ays5nn1"]
+
+[ext_resource type="Script" path="res://source/scenes/general/coin.gd" id="1_8ohgy"]
+[ext_resource type="Texture2D" uid="uid://ejvt8kiolb3v" path="res://assets/sprites/misc/coin.png" id="1_eqwpe"]
+[ext_resource type="AudioStream" uid="uid://bwqo0oy5hkjw6" path="res://assets/sound/sfx/coin.wav" id="3_423k0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsmdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eqwpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgflx"]
+size = Vector2(7, 8)
+
+[node name="Coin" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8ohgy")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rsmdi")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_sgflx")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_423k0")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="SFX" to="." method="_on_sfx_finished"]

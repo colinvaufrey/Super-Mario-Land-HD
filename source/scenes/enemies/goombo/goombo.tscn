@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://mb17xvehgcv7"]
+
+[ext_resource type="Script" path="res://source/scenes/enemies/goombo/goombo.gd" id="1_0hg02"]
+[ext_resource type="Texture2D" uid="uid://jlagebqibg4q" path="res://assets/sprites/enemies/goombo/goombo_stomp.png" id="2_5qr6u"]
+[ext_resource type="Texture2D" uid="uid://l84l6d7d1o7b" path="res://assets/sprites/enemies/goombo/goombo_1.png" id="3_blkm1"]
+[ext_resource type="Texture2D" uid="uid://bl8aoq6po8mdb" path="res://assets/sprites/enemies/goombo/goombo_2.png" id="4_nwbt1"]
+[ext_resource type="AudioStream" uid="uid://djr0hbbi4f00p" path="res://assets/sound/sfx/enemy_killed.wav" id="5_7diek"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hhab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5qr6u")
+}],
+"loop": true,
+"name": &"stomped",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_blkm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nwbt1")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5t0n"]
+size = Vector2(8, 8)
+
+[node name="Goombo" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 2
+script = ExtResource("1_0hg02")
+direction = -1
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0hhab")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k5t0n")
+one_way_collision = true
+
+[node name="HitArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="HitArea"]
+shape = SubResource("RectangleShape2D_k5t0n")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7diek")
+bus = &"SFX"
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

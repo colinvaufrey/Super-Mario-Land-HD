@@ -9,5 +9,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var debug_text := ""
-	debug_text += "State: " + mario.state_machine.state.name
+	debug_text += "State: %s\n" % mario.state_machine.state.name
+	debug_text += "Velocity: %.2f" % mario.velocity.x
 	label.text = debug_text

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl8aoq6po8mdb"
-path="res://.godot/imported/goomba_2.png-2311353facb4827d599f0509b51ec369.ctex"
+path="res://.godot/imported/goombo_2.png-9487183809a55cbf09f5dcf55b040ac7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/goomba/goomba_2.png"
-dest_files=["res://.godot/imported/goomba_2.png-2311353facb4827d599f0509b51ec369.ctex"]
+source_file="res://assets/sprites/enemies/goombo/goombo_2.png"
+dest_files=["res://.godot/imported/goombo_2.png-9487183809a55cbf09f5dcf55b040ac7.ctex"]
 
 [params]
 

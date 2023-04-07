@@ -1,11 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://3gqaa0kri43u"]
+[gd_scene load_steps=24 format=3 uid="uid://3gqaa0kri43u"]
 
 [ext_resource type="Script" path="res://source/scenes/debug.gd" id="1_knnhh"]
 [ext_resource type="Texture2D" uid="uid://wwvnvqr1btr7" path="res://assets/tilesets/tileset.png" id="1_x7rx8"]
 [ext_resource type="PackedScene" uid="uid://87mvs53y2p3g" path="res://source/scenes/mario/mario.tscn" id="2_247bi"]
 [ext_resource type="PackedScene" uid="uid://dml3m0e2ps5jf" path="res://source/scenes/general/hittable_blocks/interro_block.tscn" id="2_wec2b"]
 [ext_resource type="PackedScene" uid="uid://bijbxveunft2r" path="res://source/scenes/general/hittable_blocks/breakable_block.tscn" id="3_jvcmn"]
+[ext_resource type="PackedScene" uid="uid://blj7q1ays5nn1" path="res://source/scenes/general/coin.tscn" id="4_pvnuy"]
 [ext_resource type="AudioStream" uid="uid://sfrygwcxarux" path="res://assets/sound/music/arrange/01 MARIO ADVENTURES I (Main BGM #1).mp3" id="4_x85g1"]
+[ext_resource type="PackedScene" uid="uid://mb17xvehgcv7" path="res://source/scenes/enemies/goombo/goombo.tscn" id="6_lovgn"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_35frm"]
 tile_data = PackedInt32Array(0, 262144, 6, 65536, 262144, 7)
@@ -843,9 +845,11 @@ texture_region_size = Vector2i(8, 8)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_w6ihr"]
-resource_name = "Blocks"
+resource_name = "Scenes"
 scenes/1/scene = ExtResource("2_wec2b")
 scenes/2/scene = ExtResource("3_jvcmn")
+scenes/3/scene = ExtResource("4_pvnuy")
+scenes/4/scene = ExtResource("6_lovgn")
 
 [sub_resource type="TileSet" id="TileSet_nfjtk"]
 tile_size = Vector2i(8, 8)
@@ -878,10 +882,18 @@ font_size = 4
 
 [node name="Game" type="Node"]
 
-[node name="World" type="Node2D" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x85g1")
+autoplay = true
+bus = &"Music"
+
+[node name="WorldLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="World" type="Node2D" parent="WorldLayer"]
 texture_filter = 1
 
-[node name="Level" type="TileMap" parent="World"]
+[node name="Level" type="TileMap" parent="WorldLayer/World"]
 tile_set = SubResource("TileSet_nfjtk")
 format = 2
 layer_0/name = "Background"
@@ -892,13 +904,15 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(-458747, 1, 65536, -458730, 1, 65536, -655326, 1, 65536, -458707, 1, 65536, -589757, 1, 65536, -589755, 1, 65536, -589753, 1, 65536, -393135, 1, 65536, -655266, 1, 65536, -458648, 1, 65536, -655235, 1, 65536, -655234, 1, 65536, -655233, 1, 65536, -655232, 1, 65536, -655231, 1, 65536, -655230, 1, 65536, -917377, 1, 65536, -917376, 1, 65536, -458608, 1, 65536, -458591, 1, 65536, -655187, 1, 65536, -589638, 1, 65536, -589636, 1, 65536, -589634, 1, 65536, -458552, 1, 65536, -655148, 1, 65536, -458529, 1, 65536, -589756, 1, 131072, -589754, 1, 131072, -720817, 1, 131072, -720816, 1, 131072, -720815, 1, 131072, -720814, 1, 131072, -720813, 1, 131072, -720812, 1, 131072, -589637, 1, 131072, -589635, 1, 131072, -589569, 1, 131072, -589567, 1, 131072, -589568, 1, 131072)
+layer_1/tile_data = PackedInt32Array(-458747, 1, 65536, -458730, 1, 65536, -655326, 1, 65536, -458707, 1, 65536, -589757, 1, 65536, -589755, 1, 65536, -589753, 1, 65536, -393135, 1, 65536, -655266, 1, 65536, -458648, 1, 65536, -655235, 1, 65536, -655234, 1, 65536, -655233, 1, 65536, -655232, 1, 65536, -655231, 1, 65536, -655230, 1, 65536, -917377, 1, 65536, -917376, 1, 65536, -458608, 1, 65536, -458591, 1, 65536, -655187, 1, 65536, -589638, 1, 65536, -589636, 1, 65536, -589634, 1, 65536, -458552, 1, 65536, -655148, 1, 65536, -458529, 1, 65536, -589756, 1, 131072, -589754, 1, 131072, -720817, 1, 131072, -720816, 1, 131072, -720815, 1, 131072, -720814, 1, 131072, -720813, 1, 131072, -720812, 1, 131072, -589637, 1, 131072, -589635, 1, 131072, -589569, 1, 131072, -589567, 1, 131072, -589568, 1, 131072, -720810, 1, 196608, -786346, 1, 196608, -851882, 1, 196608, -655274, 1, 196608, -524202, 1, 196608, -589738, 1, 196608, -458666, 1, 196608, -327416, 1, 196608, -327414, 1, 196608, -327412, 1, 196608, -524020, 1, 196608, -524018, 1, 196608, -524016, 1, 196608, -851693, 1, 196608, -720621, 1, 196608, -589549, 1, 196608, -458477, 1, 196608, -327405, 1, 196608, -196588, 1, 262144)
 
-[node name="Mario" parent="World" instance=ExtResource("2_247bi")]
+[node name="Mario" parent="WorldLayer/World" instance=ExtResource("2_247bi")]
 unique_name_in_owner = true
 position = Vector2(44, -24)
 
-[node name="UI" type="Control" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UILayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -906,7 +920,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Debug" type="Control" parent="UI"]
+[node name="Debug" type="Control" parent="UILayer/UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -915,17 +929,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_knnhh")
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/Debug"]
+[node name="PanelContainer" type="PanelContainer" parent="UILayer/UI/Debug"]
 layout_mode = 0
 offset_right = 71.0
 offset_bottom = 21.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ams2u")
 
-[node name="Label" type="Label" parent="UI/Debug/PanelContainer"]
+[node name="Label" type="Label" parent="UILayer/UI/Debug/PanelContainer"]
 layout_mode = 2
 text = "Bonjour"
 label_settings = SubResource("LabelSettings_eqti2")
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_x85g1")
-autoplay = true
+[connection signal="body_entered" from="WorldLayer/World/Level/Coin" to="WorldLayer/World/Level/Coin" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23058" to="WorldLayer/World/Level/@Coin@23058" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23059" to="WorldLayer/World/Level/@Coin@23059" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23060" to="WorldLayer/World/Level/@Coin@23060" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23061" to="WorldLayer/World/Level/@Coin@23061" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23062" to="WorldLayer/World/Level/@Coin@23062" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23064" to="WorldLayer/World/Level/@Coin@23064" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23065" to="WorldLayer/World/Level/@Coin@23065" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23066" to="WorldLayer/World/Level/@Coin@23066" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23067" to="WorldLayer/World/Level/@Coin@23067" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23068" to="WorldLayer/World/Level/@Coin@23068" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23095" to="WorldLayer/World/Level/@Coin@23095" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23096" to="WorldLayer/World/Level/@Coin@23096" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23097" to="WorldLayer/World/Level/@Coin@23097" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23098" to="WorldLayer/World/Level/@Coin@23098" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23099" to="WorldLayer/World/Level/@Coin@23099" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23100" to="WorldLayer/World/Level/@Coin@23100" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="WorldLayer/World/Level/@Coin@23101" to="WorldLayer/World/Level/@Coin@23101" method="_on_body_entered" flags=18]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jlagebqibg4q"
-path="res://.godot/imported/goomba_stomp.png-2c9cab80239108e2ce0d196faf00ae05.ctex"
+path="res://.godot/imported/goombo_stomp.png-4da3be4f07097998fa4da608bcb57dd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/goomba/goomba_stomp.png"
-dest_files=["res://.godot/imported/goomba_stomp.png-2c9cab80239108e2ce0d196faf00ae05.ctex"]
+source_file="res://assets/sprites/enemies/goombo/goombo_stomp.png"
+dest_files=["res://.godot/imported/goombo_stomp.png-4da3be4f07097998fa4da608bcb57dd2.ctex"]
 
 [params]
 
