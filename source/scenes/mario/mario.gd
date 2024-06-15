@@ -1,7 +1,7 @@
 class_name Mario
 extends CharacterBody2D
 
-@export var is_super := false 
+@export var is_super := false
 
 var speed := 59
 var run_speed := 93
@@ -12,7 +12,6 @@ var stomp_jump := 60
 var slide_factor := 0.6
 
 var gravity: int = 320
-#var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var state_machine: Node = $StateMachine
 @onready var sprite: AnimatedSprite2D = $Sprite
