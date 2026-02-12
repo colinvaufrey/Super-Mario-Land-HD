@@ -370,6 +370,7 @@ scenes/4/scene = ExtResource("6_lovgn")
 [sub_resource type="TileSet" id="TileSet_nfjtk"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x4nes")
 sources/1 = SubResource("TileSetScenesCollectionSource_w6ihr")
 pattern_0 = SubResource("TileMapPattern_35frm")
@@ -455,21 +456,21 @@ layout_mode = 2
 text = "Bonjour"
 label_settings = SubResource("LabelSettings_eqti2")
 
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24372" to="WorldLayer/World/Level/Foreground/@Area2D@24372" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24373" to="WorldLayer/World/Level/Foreground/@Area2D@24373" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24374" to="WorldLayer/World/Level/Foreground/@Area2D@24374" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24375" to="WorldLayer/World/Level/Foreground/@Area2D@24375" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24376" to="WorldLayer/World/Level/Foreground/@Area2D@24376" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24377" to="WorldLayer/World/Level/Foreground/@Area2D@24377" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24378" to="WorldLayer/World/Level/Foreground/@Area2D@24378" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24379" to="WorldLayer/World/Level/Foreground/@Area2D@24379" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24380" to="WorldLayer/World/Level/Foreground/@Area2D@24380" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24381" to="WorldLayer/World/Level/Foreground/@Area2D@24381" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24382" to="WorldLayer/World/Level/Foreground/@Area2D@24382" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24383" to="WorldLayer/World/Level/Foreground/@Area2D@24383" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24384" to="WorldLayer/World/Level/Foreground/@Area2D@24384" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24385" to="WorldLayer/World/Level/Foreground/@Area2D@24385" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24386" to="WorldLayer/World/Level/Foreground/@Area2D@24386" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24387" to="WorldLayer/World/Level/Foreground/@Area2D@24387" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24388" to="WorldLayer/World/Level/Foreground/@Area2D@24388" method="_on_body_entered"]
-[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@24389" to="WorldLayer/World/Level/Foreground/@Area2D@24389" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/Coin" to="WorldLayer/World/Level/Foreground/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70383" to="WorldLayer/World/Level/Foreground/@Area2D@70383" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70384" to="WorldLayer/World/Level/Foreground/@Area2D@70384" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70385" to="WorldLayer/World/Level/Foreground/@Area2D@70385" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70386" to="WorldLayer/World/Level/Foreground/@Area2D@70386" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70387" to="WorldLayer/World/Level/Foreground/@Area2D@70387" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70388" to="WorldLayer/World/Level/Foreground/@Area2D@70388" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70389" to="WorldLayer/World/Level/Foreground/@Area2D@70389" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70390" to="WorldLayer/World/Level/Foreground/@Area2D@70390" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70391" to="WorldLayer/World/Level/Foreground/@Area2D@70391" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70392" to="WorldLayer/World/Level/Foreground/@Area2D@70392" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70393" to="WorldLayer/World/Level/Foreground/@Area2D@70393" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70394" to="WorldLayer/World/Level/Foreground/@Area2D@70394" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70395" to="WorldLayer/World/Level/Foreground/@Area2D@70395" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70396" to="WorldLayer/World/Level/Foreground/@Area2D@70396" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70397" to="WorldLayer/World/Level/Foreground/@Area2D@70397" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70398" to="WorldLayer/World/Level/Foreground/@Area2D@70398" method="_on_body_entered"]
+[connection signal="body_entered" from="WorldLayer/World/Level/Foreground/@Area2D@70399" to="WorldLayer/World/Level/Foreground/@Area2D@70399" method="_on_body_entered"]

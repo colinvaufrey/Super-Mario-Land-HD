@@ -1,6 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://87mvs53y2p3g"]
+[gd_scene format=3 uid="uid://87mvs53y2p3g"]
 
-[ext_resource type="Script" path="res://source/scenes/mario/mario.gd" id="1_36c7h"]
+[ext_resource type="Script" uid="uid://bh1aal6iojm0r" path="res://source/scenes/mario/mario.gd" id="1_36c7h"]
 [ext_resource type="Texture2D" uid="uid://cywbx4k0qa2d1" path="res://assets/sprites/mario/mario_crouch.png" id="2_tl0xs"]
 [ext_resource type="Texture2D" uid="uid://b8ktqa51h3w2t" path="res://assets/sprites/mario/mario_death.png" id="3_padv7"]
 [ext_resource type="Texture2D" uid="uid://ctnmaswx7hprg" path="res://assets/sprites/mario/mario_fireball.png" id="4_b67sd"]
@@ -24,11 +24,11 @@
 [ext_resource type="Texture2D" uid="uid://csc0vptlkudw8" path="res://assets/sprites/mario/mario_sky_pop_super_2.png" id="20_bnm5l"]
 [ext_resource type="Texture2D" uid="uid://cmbfgahgjhao5" path="res://assets/sprites/mario/mario_slide.png" id="21_vjflv"]
 [ext_resource type="Texture2D" uid="uid://6r86oe67g58i" path="res://assets/sprites/mario/mario_slide_super.png" id="22_h6vd5"]
-[ext_resource type="Script" path="res://source/utility/state_machine.gd" id="23_pbppb"]
-[ext_resource type="Script" path="res://source/scenes/mario/states/idle.gd" id="24_mos4l"]
-[ext_resource type="Script" path="res://source/scenes/mario/states/run.gd" id="25_83cnd"]
-[ext_resource type="Script" path="res://source/scenes/mario/states/air.gd" id="26_4i2dd"]
-[ext_resource type="Script" path="res://source/scenes/mario/SFXPlayer.gd" id="29_o141p"]
+[ext_resource type="Script" uid="uid://ciny5i5qdjkga" path="res://source/utility/state_machine.gd" id="23_pbppb"]
+[ext_resource type="Script" uid="uid://du3rq5pe40qqf" path="res://source/scenes/mario/states/idle.gd" id="24_mos4l"]
+[ext_resource type="Script" uid="uid://cfw88fjp1vrla" path="res://source/scenes/mario/states/run.gd" id="25_83cnd"]
+[ext_resource type="Script" uid="uid://dnuag053v1c8l" path="res://source/scenes/mario/states/air.gd" id="26_4i2dd"]
+[ext_resource type="Script" uid="uid://dbequwqq8bvt" path="res://source/scenes/mario/SFXPlayer.gd" id="29_o141p"]
 [ext_resource type="AudioStream" uid="uid://cnpxuvfnf83v6" path="res://assets/sound/sfx/jump.wav" id="30_o5slm"]
 [ext_resource type="AudioStream" uid="uid://b2t82m0d18o1v" path="res://assets/sound/sfx/power_up.wav" id="31_mahkr"]
 [ext_resource type="AudioStream" uid="uid://dm58w0bxu157f" path="res://assets/sound/sfx/power_down.wav" id="32_yuy4a"]
@@ -190,21 +190,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0tsd"]
 size = Vector2(9, 6)
 
-[node name="Mario" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3nv8"]
+radius = 3.0
+height = 6.0
+
+[node name="Mario" type="CharacterBody2D" unique_id=402076096]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_36c7h")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2026204808]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m8loy")
 animation = &"idle"
 
-[node name="TerrainCollision" type="CollisionShape2D" parent="."]
+[node name="TerrainCollision" type="CollisionShape2D" parent="." unique_id=464775803]
 position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_h0tsd")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="BlockCollision" type="CollisionShape2D" parent="." unique_id=231459087]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_a3nv8")
+debug_color = Color(0.58276606, 0.5512541, 3.85046e-07, 0.41960785)
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1644746064]
 limit_left = 0
 limit_bottom = 0
 drag_horizontal_enabled = true
@@ -214,21 +223,25 @@ drag_bottom_margin = 1.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=1954899635]
 script = ExtResource("23_pbppb")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1710593425]
 script = ExtResource("24_mos4l")
 
-[node name="Run" type="Node" parent="StateMachine"]
+[node name="Run" type="Node" parent="StateMachine" unique_id=1646448071]
 script = ExtResource("25_83cnd")
 
-[node name="Air" type="Node" parent="StateMachine"]
+[node name="Air" type="Node" parent="StateMachine" unique_id=912577684]
 script = ExtResource("26_4i2dd")
 
-[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1560265397]
 bus = &"SFX"
 script = ExtResource("29_o141p")
-sounds = Array[AudioStream]([ExtResource("30_o5slm"), ExtResource("31_mahkr"), ExtResource("32_yuy4a"), ExtResource("33_bydd6")])
-names = Array[String](["jump", "power_up", "power_down", "fire_ball"])
+sounds_by_name = Dictionary[String, AudioStream]({
+"fire_ball": ExtResource("33_bydd6"),
+"jump": ExtResource("30_o5slm"),
+"power_down": ExtResource("32_yuy4a"),
+"power_up": ExtResource("31_mahkr")
+})

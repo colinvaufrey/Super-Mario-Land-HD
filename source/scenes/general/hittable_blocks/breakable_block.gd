@@ -2,7 +2,7 @@ extends HittableBlock
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func hit(by_super_mario := false):
+func hit(by_super_mario := false) -> void:
 	if by_super_mario:
 		animation_player.play("break")
 	else:

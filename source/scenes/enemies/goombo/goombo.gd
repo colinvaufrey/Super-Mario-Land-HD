@@ -22,9 +22,9 @@ func _physics_process(delta: float) -> void:
 	
 	var collision_count := get_slide_collision_count()
 	for i in range(collision_count):
-		var collision := get_slide_collision(i)
-		if collision.get_normal() == Vector2(1, 0) or collision.get_normal() == Vector2(-1, 0) :
-			direction = -direction
+		var collision_result := get_slide_collision(i)
+		if collision_result.get_normal() == Vector2(1, 0) or collision_result.get_normal() == Vector2(-1, 0):
+			direction = - direction
 			break
 
 
@@ -37,7 +37,7 @@ func stomp() -> void:
 	sprite.play("stomped")
 	sfx.play()
 	direction = 0
-	collision.disabled = true
+	collision.set_deferred("disabled", true)
 	set_physics_process(false)
 	await get_tree().create_timer(1).timeout
 	queue_free()

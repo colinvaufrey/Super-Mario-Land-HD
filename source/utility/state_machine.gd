@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 
 func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	if not has_node(target_state_name):
+		push_error("State '%s' does not exist in the state machine." % target_state_name)
 		return
 	
 	state.exit()

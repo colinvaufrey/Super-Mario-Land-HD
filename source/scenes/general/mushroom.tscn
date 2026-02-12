@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://qr05ep8c52gj"]
+[gd_scene format=3 uid="uid://qr05ep8c52gj"]
 
 [ext_resource type="Texture2D" uid="uid://b2ow81r6gv31j" path="res://assets/sprites/misc/mushroom.png" id="1_wvmoe"]
 
@@ -16,12 +16,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ry4n"]
 size = Vector2(8, 8)
 
-[node name="Mushroom" type="Area2D"]
+[node name="Mushroom" type="Area2D" unique_id=2015157875]
 texture_filter = 1
 rotation = 0.785398
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1565073632]
 sprite_frames = SubResource("SpriteFrames_ilm6j")
+frame_progress = 0.9517504
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1421559261]
 shape = SubResource("RectangleShape2D_6ry4n")
