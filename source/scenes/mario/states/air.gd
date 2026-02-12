@@ -27,13 +27,18 @@ func _check_collisions() -> void:
 	for i in range(collision_count):
 		var collision := mario.get_slide_collision(i)
 		var collider := collision.get_collider()
-		if collider is HittableBlock:
-			if collision.get_normal() == Vector2(0, 1):
-				collider.hit(mario.is_super)
-		elif collider is Enemy:
+		if collider is Enemy:
 			collider.stomp()
 			mario.velocity.y = - mario.stomp_jump
 			hit_enemy = true
+	if mario.velocity.y < 0 and not jump_cut:
+		for collider: Object in mario.block_detector.get_overlapping_bodies():
+			print(collider)
+			if collider is HittableBlock:
+				collider.hit(mario.is_super)
+				jump_cut = true
+				mario.velocity.y = - mario.jump_cut_ceiling
+				break
 
 
 func physics_update(delta: float) -> void:

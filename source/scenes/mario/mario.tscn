@@ -190,9 +190,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0tsd"]
 size = Vector2(9, 6)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3nv8"]
-radius = 3.0
-height = 6.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3nv8"]
+size = Vector2(2, 4)
 
 [node name="Mario" type="CharacterBody2D" unique_id=402076096]
 collision_layer = 2
@@ -210,9 +209,10 @@ animation = &"idle"
 position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_h0tsd")
 
-[node name="BlockCollision" type="CollisionShape2D" parent="." unique_id=231459087]
-position = Vector2(0, 4)
-shape = SubResource("CapsuleShape2D_a3nv8")
+[node name="BlockDetector" type="Area2D" parent="." unique_id=2057790142]
+
+[node name="BlockCollision" type="CollisionShape2D" parent="BlockDetector" unique_id=231459087]
+shape = SubResource("RectangleShape2D_a3nv8")
 debug_color = Color(0.58276606, 0.5512541, 3.85046e-07, 0.41960785)
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1644746064]

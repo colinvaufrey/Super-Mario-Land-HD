@@ -18,6 +18,7 @@ extends CharacterBody2D
 @onready var state_machine: Node = $StateMachine
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var sfx_player: SFXPlayer = $SFXPlayer
+@onready var block_detector: Area2D = $BlockDetector
 
 var acceleration: Vector2 = Vector2.ZERO
 
