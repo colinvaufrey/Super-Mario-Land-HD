@@ -198,6 +198,8 @@ height = 6.0
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_36c7h")
+jump_velocity = 142
+jump_velocity_running = 164
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2026204808]
 texture_filter = 1

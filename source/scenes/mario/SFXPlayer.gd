@@ -2,8 +2,6 @@
 class_name SFXPlayer
 extends AudioStreamPlayer2D
 
-@export var sounds: Array[AudioStream]
-@export var names: Array[String]
 @export var sounds_by_name: Dictionary[String, AudioStream]
 
 func play_sfx(sfx_name: String) -> void:

@@ -3,15 +3,17 @@ extends CharacterBody2D
 
 @export var is_super := false
 
-var speed := 59
-var run_speed := 93
+@export_group("Movement")
+@export var speed := 59
+@export var run_speed := 93
 
-var jump_velocity := 146
-var jump_cut_ceiling := 82
-var stomp_jump := 60
-var slide_factor := 0.6
+@export var jump_velocity := 146
+@export var jump_velocity_running := 170
+@export var jump_cut_ceiling := 82
+@export var stomp_jump := 60
+@export var slide_factor := 0.6
 
-var gravity: int = 320
+@export var gravity: int = 320
 
 @onready var state_machine: Node = $StateMachine
 @onready var sprite: AnimatedSprite2D = $Sprite

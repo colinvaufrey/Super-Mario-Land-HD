@@ -111,3 +111,7 @@ run_fireball={
 
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Actors"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)
