@@ -37,7 +37,8 @@ func _check_collisions() -> void:
 			if collider is HittableBlock:
 				collider.hit(mario.is_super)
 				jump_cut = true
-				mario.velocity.y = - mario.jump_cut_ceiling
+				if collider is InterroBlock and collider.already_hit:
+					mario.velocity.y = mario.jump_velocity
 				break
 
 

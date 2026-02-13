@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c505l0cnbhx4t"]
+
+[ext_resource type="Script" uid="uid://c7bvffhb4qusq" path="res://source/scenes/general/cycling_platform/moving_platform.gd" id="1_b6fr5"]
+
+[node name="MovingPlatform" type="Path2D" unique_id=1506663459]
+script = ExtResource("1_b6fr5")
+
+[node name="PathFollower" type="PathFollow2D" parent="." unique_id=545037931]
+rotates = false
+
+[node name="Platform" type="AnimatableBody2D" parent="PathFollower" unique_id=1872476497]
+position = Vector2(12, 2.5)
+sync_to_physics = false

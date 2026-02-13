@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://3gqaa0kri43u"]
 
+[ext_resource type="AudioStream" uid="uid://dxwy0ry46v1eq" path="res://assets/sound/music/arrange/03 UNDERGROUND (Underground BGM).mp3" id="1_66n82"]
 [ext_resource type="Script" uid="uid://govxk6hxbai5" path="res://source/scenes/debug.gd" id="1_knnhh"]
 [ext_resource type="PackedScene" uid="uid://87mvs53y2p3g" path="res://source/scenes/mario/mario.tscn" id="2_247bi"]
 [ext_resource type="PackedScene" uid="uid://cg0qx7eff50l5" path="res://source/scenes/levels/level_1_1.tscn" id="2_t5wd7"]
-[ext_resource type="AudioStream" uid="uid://sfrygwcxarux" path="res://assets/sound/music/arrange/01 MARIO ADVENTURES I (Main BGM #1).mp3" id="4_x85g1"]
+[ext_resource type="PackedScene" uid="uid://btr55adb1timw" path="res://source/scenes/levels/level_1_2.tscn" id="4_ywmtt"]
+[ext_resource type="PackedScene" uid="uid://beydw7cluu0ox" path="res://source/scenes/levels/level_1_3.tscn" id="5_66n82"]
+[ext_resource type="PackedScene" uid="uid://xcpvheytkrbg" path="res://source/scenes/levels/level_2_1.tscn" id="6_4kujm"]
+[ext_resource type="PackedScene" uid="uid://c7nnhqajtyi61" path="res://source/scenes/levels/level_2_2.tscn" id="7_7iyis"]
+[ext_resource type="PackedScene" uid="uid://p4n1niocyfvc" path="res://source/scenes/levels/level_2_3.tscn" id="8_4mo0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ams2u"]
 content_margin_left = 2.0
@@ -22,17 +27,32 @@ font_size = 4
 [node name="Game" type="Node" unique_id=378360886]
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=463266514]
-stream = ExtResource("4_x85g1")
+stream = ExtResource("1_66n82")
 autoplay = true
 bus = &"Music"
 
 [node name="WorldLayer" type="CanvasLayer" parent="." unique_id=758825076]
 follow_viewport_enabled = true
 
-[node name="Level1-1" parent="WorldLayer" unique_id=502872122 instance=ExtResource("2_t5wd7")]
-
 [node name="World" type="Node2D" parent="WorldLayer" unique_id=1543265021]
 texture_filter = 1
+
+[node name="Level1-1" parent="WorldLayer/World" unique_id=502872122 instance=ExtResource("2_t5wd7")]
+
+[node name="Level1-2" parent="WorldLayer/World" unique_id=959929070 instance=ExtResource("4_ywmtt")]
+position = Vector2(2400, 0)
+
+[node name="Level1-3" parent="WorldLayer/World" unique_id=881124643 instance=ExtResource("5_66n82")]
+position = Vector2(4640, 0)
+
+[node name="Level2-1" parent="WorldLayer/World" unique_id=1336006137 instance=ExtResource("6_4kujm")]
+position = Vector2(7200, 0)
+
+[node name="Level2-2" parent="WorldLayer/World" unique_id=656347099 instance=ExtResource("7_7iyis")]
+position = Vector2(9760, 0)
+
+[node name="Level2-3" parent="WorldLayer/World" unique_id=1346950268 instance=ExtResource("8_4mo0g")]
+position = Vector2(12000, 0)
 
 [node name="Mario" parent="WorldLayer/World" unique_id=1553372803 instance=ExtResource("2_247bi")]
 unique_name_in_owner = true

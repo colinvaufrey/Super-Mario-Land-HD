@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://wnedampv2uls"]
+
+[ext_resource type="PackedScene" uid="uid://c505l0cnbhx4t" path="res://source/scenes/general/cycling_platform/moving_platform.tscn" id="1_g1q8d"]
+[ext_resource type="Texture2D" uid="uid://wwvnvqr1btr7" path="res://assets/tilesets/tileset.png" id="2_bvrqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t48nl"]
+size = Vector2(32, 5)
+
+[node name="VeryLongMovingPlatform" unique_id=1506663459 instance=ExtResource("1_g1q8d")]
+
+[node name="Sprite" type="Sprite2D" parent="PathFollower/Platform" parent_id_path=PackedInt32Array(1872476497) index="0" unique_id=217924882]
+texture_filter = 1
+texture = ExtResource("2_bvrqf")
+region_enabled = true
+region_rect = Rect2(106, 80, 8, 5)
+
+[node name="Sprite2" type="Sprite2D" parent="PathFollower/Platform" parent_id_path=PackedInt32Array(1872476497) index="1" unique_id=2045318932]
+texture_filter = 1
+position = Vector2(-8, 0)
+texture = ExtResource("2_bvrqf")
+region_enabled = true
+region_rect = Rect2(106, 80, 8, 5)
+
+[node name="Sprite3" type="Sprite2D" parent="PathFollower/Platform" parent_id_path=PackedInt32Array(1872476497) index="2" unique_id=39651522]
+texture_filter = 1
+position = Vector2(8, 0)
+texture = ExtResource("2_bvrqf")
+region_enabled = true
+region_rect = Rect2(106, 80, 8, 5)
+
+[node name="Sprite4" type="Sprite2D" parent="PathFollower/Platform" parent_id_path=PackedInt32Array(1872476497) index="3" unique_id=1179264376]
+texture_filter = 1
+position = Vector2(16, 0)
+texture = ExtResource("2_bvrqf")
+region_enabled = true
+region_rect = Rect2(106, 80, 8, 5)
+
+[node name="Collision" type="CollisionShape2D" parent="PathFollower/Platform" parent_id_path=PackedInt32Array(1872476497) index="4" unique_id=1673418553]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_t48nl")
+one_way_collision = true
+one_way_collision_margin = 2.0

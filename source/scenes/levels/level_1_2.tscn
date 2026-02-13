@@ -2,6 +2,49 @@
 
 [ext_resource type="PackedScene" uid="uid://dgv4akcul1nty" path="res://source/scenes/levels/base_level.tscn" id="1_v63dy"]
 [ext_resource type="Texture2D" uid="uid://ckhucoc1hyv1w" path="res://assets/source/Game Boy GBC - Super Mario Land - World 1-2.png" id="2_4fuev"]
+[ext_resource type="PackedScene" uid="uid://bwdg1gtutgwyx" path="res://source/scenes/general/cycling_platform/long_moving_platform.tscn" id="2_qujic"]
+
+[sub_resource type="Curve2D" id="Curve2D_qujic"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, -40, 0, 0, 0, 0, -2, 24)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_f3mdg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 4, 0, 0, 0, 0, -2, -56)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_87pte"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, -40)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xrhlh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -59)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_yl3am"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 36, 0, 0, 0, 0, 0, -24)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_hyd47"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 28, 0, 0, 0, 0, 0, -32, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_3jhae"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, -48)
+}
+point_count = 2
 
 [node name="Level1-2" unique_id=502872122 instance=ExtResource("1_v63dy")]
 
@@ -11,33 +54,61 @@ tile_map_data = PackedByteArray("AAABAP7/AAADAAYAAAABAP//AAADAAYAAAACAP3/AAADAAY
 [node name="Foreground" parent="." index="1" unique_id=2045351175]
 tile_map_data = PackedByteArray("AAAQAPX/AQAAAAAAAwASAPX/AQAAAAAAAwAUAPP/AQAAAAAAAwAWAPP/AQAAAAAAAwAmAPP/AQAAAAAAAwAhAPX/AQAAAAAAAwA8APP/AQAAAAAAAwA+APP/AQAAAAAAAwBJAPX/AQAAAAAAAwBOAPP/AQAAAAAAAwBTAPX/AQAAAAAAAwBTAPn/AQAAAAAAAwBTAPf/AQAAAAAAAwByAPT/AQAAAAAAAwBzAPT/AQAAAAAAAwB0APT/AQAAAAAAAwCgAPP/AQAAAAAAAwCiAPP/AQAAAAAAAwDLAPX/AQAAAAAAAwDLAPf/AQAAAAAAAwDLAPn/AQAAAAAAAwDqAPT/AQAAAAAAAwDrAPT/AQAAAAAAAwDsAPT/AQAAAAAAAwAAAfX/AQAAAAAAAwACAfX/AQAAAAAAAwAVAPP/AQAAAAAAAQA9APP/AQAAAAAAAQBcAPP/AQAAAAAAAQBeAPP/AQAAAAAAAQBgAPP/AQAAAAAAAQCzAPX/AQAAAAAAAQDUAPP/AQAAAAAAAQDWAPP/AQAAAAAAAQDYAPP/AQAAAAAAAQDbAPv/AQAAAAAAAQDVAPP/AQAAAAAAAgDXAPP/AQAAAAAAAgBfAPP/AQAAAAAAAgBdAPP/AQAAAAAAAgBjAPv/AQAAAAAAAQA=")
 
-[node name="ReferenceImage" parent="." index="2" unique_id=243024994]
+[node name="LongMovingPlatform" parent="MovingPlatforms" parent_id_path=PackedInt32Array(31035156) index="0" unique_id=1506663459 instance=ExtResource("2_qujic")]
+position = Vector2(842, -64)
+curve = SubResource("Curve2D_qujic")
+
+[node name="LongMovingPlatform2" parent="MovingPlatforms" parent_id_path=PackedInt32Array(31035156) index="1" unique_id=1099995921 instance=ExtResource("2_qujic")]
+position = Vector2(890, -8)
+curve = SubResource("Curve2D_f3mdg")
+
+[node name="LongMovingPlatform3" parent="MovingPlatforms" parent_id_path=PackedInt32Array(31035156) index="2" unique_id=606192199 instance=ExtResource("2_qujic")]
+position = Vector2(1496, -40)
+curve = SubResource("Curve2D_87pte")
+
+[node name="LongMovingPlatform4" parent="MovingPlatforms" parent_id_path=PackedInt32Array(31035156) index="3" unique_id=1471780910 instance=ExtResource("2_qujic")]
+position = Vector2(1536, -53)
+curve = SubResource("Curve2D_xrhlh")
+
+[node name="LongMovingPlatform5" parent="MovingPlatforms" parent_id_path=PackedInt32Array(31035156) index="4" unique_id=2045146293 instance=ExtResource("2_qujic")]
+position = Vector2(1576, -48)
+curve = SubResource("Curve2D_yl3am")
+
+[node name="LongMovingPlatform6" parent="MovingPlatforms" parent_id_path=PackedInt32Array(31035156) index="5" unique_id=577406508 instance=ExtResource("2_qujic")]
+position = Vector2(1836, -64)
+curve = SubResource("Curve2D_hyd47")
+
+[node name="LongMovingPlatform7" parent="MovingPlatforms" parent_id_path=PackedInt32Array(31035156) index="6" unique_id=1800490673 instance=ExtResource("2_qujic")]
+position = Vector2(2112, -40)
+curve = SubResource("Curve2D_3jhae")
+
+[node name="ReferenceImage" parent="." index="3" unique_id=243024994]
 position = Vector2(1120, -72)
 texture = ExtResource("2_4fuev")
 
 [connection signal="body_entered" from="Foreground/Coin" to="Foreground/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131194" to="Foreground/@Area2D@131194" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131195" to="Foreground/@Area2D@131195" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131196" to="Foreground/@Area2D@131196" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131197" to="Foreground/@Area2D@131197" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131198" to="Foreground/@Area2D@131198" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131199" to="Foreground/@Area2D@131199" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131200" to="Foreground/@Area2D@131200" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131201" to="Foreground/@Area2D@131201" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131202" to="Foreground/@Area2D@131202" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131203" to="Foreground/@Area2D@131203" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131204" to="Foreground/@Area2D@131204" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131205" to="Foreground/@Area2D@131205" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131206" to="Foreground/@Area2D@131206" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131207" to="Foreground/@Area2D@131207" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131208" to="Foreground/@Area2D@131208" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131209" to="Foreground/@Area2D@131209" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131210" to="Foreground/@Area2D@131210" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131211" to="Foreground/@Area2D@131211" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131212" to="Foreground/@Area2D@131212" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131213" to="Foreground/@Area2D@131213" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131214" to="Foreground/@Area2D@131214" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131215" to="Foreground/@Area2D@131215" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131216" to="Foreground/@Area2D@131216" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131217" to="Foreground/@Area2D@131217" method="_on_body_entered"]
-[connection signal="body_entered" from="Foreground/@Area2D@131218" to="Foreground/@Area2D@131218" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66488" to="Foreground/@Area2D@66488" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66489" to="Foreground/@Area2D@66489" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66490" to="Foreground/@Area2D@66490" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66491" to="Foreground/@Area2D@66491" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66492" to="Foreground/@Area2D@66492" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66493" to="Foreground/@Area2D@66493" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66494" to="Foreground/@Area2D@66494" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66495" to="Foreground/@Area2D@66495" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66496" to="Foreground/@Area2D@66496" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66497" to="Foreground/@Area2D@66497" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66498" to="Foreground/@Area2D@66498" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66499" to="Foreground/@Area2D@66499" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66500" to="Foreground/@Area2D@66500" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66501" to="Foreground/@Area2D@66501" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66502" to="Foreground/@Area2D@66502" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66503" to="Foreground/@Area2D@66503" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66504" to="Foreground/@Area2D@66504" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66505" to="Foreground/@Area2D@66505" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66506" to="Foreground/@Area2D@66506" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66507" to="Foreground/@Area2D@66507" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66508" to="Foreground/@Area2D@66508" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66509" to="Foreground/@Area2D@66509" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66510" to="Foreground/@Area2D@66510" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66511" to="Foreground/@Area2D@66511" method="_on_body_entered"]
+[connection signal="body_entered" from="Foreground/@Area2D@66512" to="Foreground/@Area2D@66512" method="_on_body_entered"]

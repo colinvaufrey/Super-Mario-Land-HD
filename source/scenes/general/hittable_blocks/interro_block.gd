@@ -1,3 +1,4 @@
+class_name InterroBlock
 extends HittableBlock
 
 var already_hit := false

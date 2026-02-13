@@ -202,6 +202,7 @@ texture_region_size = Vector2i(8, 8)
 10:5/0 = 0
 10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 12:5/0 = 0
+12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 15:5/0 = 0
 15:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 16:5/0 = 0
@@ -222,20 +223,26 @@ texture_region_size = Vector2i(8, 8)
 5:6/0 = 0
 6:6/0 = 0
 6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+6:6/0/physics_layer_0/polygon_0/one_way = true
 7:6/0 = 0
 7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+7:6/0/physics_layer_0/polygon_0/one_way = true
 8:6/0 = 0
 8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+8:6/0/physics_layer_0/polygon_0/one_way = true
 9:6/0 = 0
 9:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 10:6/0 = 0
 10:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 12:6/0 = 0
 12:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+12:6/0/physics_layer_0/polygon_0/one_way = true
 13:6/0 = 0
 13:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+13:6/0/physics_layer_0/polygon_0/one_way = true
 14:6/0 = 0
 14:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+14:6/0/physics_layer_0/polygon_0/one_way = true
 15:6/0 = 0
 15:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 16:6/0 = 0
@@ -287,9 +294,7 @@ texture_region_size = Vector2i(8, 8)
 10:7/0 = 0
 11:7/0 = 0
 12:7/0 = 0
-12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 14:7/0 = 0
-14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 15:7/0 = 0
 15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 16:7/0 = 0
@@ -406,6 +411,8 @@ tile_set = SubResource("TileSet_nfjtk")
 [node name="Foreground" type="TileMapLayer" parent="." unique_id=2045351175]
 use_parent_material = true
 tile_set = SubResource("TileSet_nfjtk")
+
+[node name="MovingPlatforms" type="Node2D" parent="." unique_id=31035156]
 
 [node name="ReferenceImage" type="Sprite2D" parent="." unique_id=243024994]
 visible = false

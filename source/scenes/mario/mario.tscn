@@ -217,7 +217,9 @@ debug_color = Color(0.58276606, 0.5512541, 3.85046e-07, 0.41960785)
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1644746064]
 limit_left = 0
+limit_top = -136
 limit_bottom = 0
+limit_smoothed = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_top_margin = 1.0
